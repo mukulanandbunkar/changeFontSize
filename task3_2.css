@@ -1,0 +1,47 @@
+.text-center{
+    text-align: center;
+}
+
+.rangeBar{
+    display: block;
+    margin: 50px auto;
+    
+}
+
+.text-area{
+    overflow: scroll;
+}
+
+.text-entered{
+    /* overflow-y: scroll; */
+    text-align: start;
+    margin: 50px auto;
+    width: 1143px;
+    
+
+}
+
+
+.text-btn{
+    display: block;
+    margin: 10px auto;
+    cursor: pointer;
+    height: 54px;
+    width: 231px;
+    border-radius: 50px;
+    font-size: 28px;
+    font-weight: bolder;
+}
+
+.text-btn:hover{
+    background-color:#23272b;
+    color: white;
+}
+
+.text-white{
+    margin-left: 20px;
+}
+
+.field{
+    border-radius: 16px;
+}
