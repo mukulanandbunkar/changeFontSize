@@ -4,7 +4,7 @@ const fields = document.getElementsByClassName('field');
 const fieldValue = document.getElementsByClassName('field-value');
 const textWhite = document.getElementsByClassName('text-white');
 const colorPicker = document.getElementById('color-picker');
-console.log(colorPicker.value);
+
 
 
 function hexToRGB(hex) {
@@ -28,30 +28,57 @@ function checkAlpha(alphaRange){
 
 }
 
+
+//first approach using the non dynamically created tag
+// function changeReload(){
+//     console.log(fields);
+//     let generatedHTML = "";
+//     for(let i=0; i<fields.length; i++){
+//         generatedHTML += `<h4 class= "text-white">${fields[i].id.toUpperCase()}:</h4><span class="field-value text-white">${fields[i].value}</span><br>`;
+//     }
+//     textEntered.innerHTML = generatedHTML;
+//     for(let i=0; i<fieldValue.length; i++){
+//         fieldValue[i].style.fontSize= `${range.value}px`;
+//     }
+//     console.log(`${hexToRGB(colorPicker.value)}${range.value/100})`)
+//     document.body.style.backgroundColor = `${hexToRGB(colorPicker.value)}${range.value/100})`;
+//     checkAlpha(range.value);
+// }
+
+// function insertAfter(newElement, referenceElement) {
+//   referenceElement.parentNode.insertBefore(newElement, referenceElement.nextSibling);
+// }
+
+//second approach to solve using dynamically created tags
 function changeReload(){
     console.log(fields);
-    range.value = "20";
-    let generatedHTML = "";
+    textEntered.innerHTML = "";
     for(let i=0; i<fields.length; i++){
-        generatedHTML += `<h4 class= "text-white">${fields[i].id.toUpperCase()}:</h4><span class="field-value text-white">${fields[i].value}</span><br>`;
+        let mainDiv = document.createElement("div");
+        let keyField = document.createElement("h4");
+        keyField.className = "text-white";
+        keyField.innerText = fields[i].id.toUpperCase();
+        let keyVal = document.createElement("span");
+        keyVal.className = "field-value text-white";
+        keyVal.innerText = fields[i].value;
+        mainDiv.append(keyField);
+        mainDiv.append(keyVal);
+        textEntered.append(mainDiv)
+        console.log(mainDiv); 
     }
-    textEntered.innerHTML = generatedHTML;
     for(let i=0; i<fieldValue.length; i++){
-        fieldValue[i].style.fontSize= `20px`;
+        fieldValue[i].style.fontSize= `${range.value}px`;
     }
     console.log(`${hexToRGB(colorPicker.value)}${range.value/100})`)
     document.body.style.backgroundColor = `${hexToRGB(colorPicker.value)}${range.value/100})`;
     checkAlpha(range.value);
-   
 }
 
 function changeSize(){
     for(let i=0; i<fieldValue.length; i++){
         fieldValue[i].style.fontSize= `${range.value}px`;
     }
-    console.log(`${hexToRGB(colorPicker.value)}${range.value/100}`);
     document.body.style.background = `${hexToRGB(colorPicker.value)}${range.value/100})`;
-    console.log(range.value/100);
     checkAlpha(range.value);
 }
 changeReload();

@@ -1,25 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Change value with slider</title>
-    <link rel="stylesheet" href="./task3_2.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./task3_2.css" />
+  </head>
+  <body>
     <h1 class="text-center text-white">Slide to Change the Size of Text</h1>
     <div class="text-center">
-        <input class="rangeBar" value="20"  type="range" name="text" id="range" min="20" max="100" onchange="changeSize()">
-       
-        <!-- <textarea  name="text" class="text-area" id="text" cols="150" rows="10"></textarea> -->
-        <span class="text-white">First Name: </span><input placeholder="Enter your first-name" id="first-name" class="field" type="text">
-        <span class="text-white">Last Name: </span><input placeholder="Enter your last-name" id="last-name" class="field"  type="text">
-        <span class="text-white">Occupation: </span><input placeholder="Enter your occuation" id="occupation" class="field" type="text">
-        <span class="text-white">Choose Color: </span><input  onchange="changeColor()" id="color-picker" class="color-picker" type="color">
-        <button class="text-btn" onclick="changeReload()">Go!</button>
-        <div  id="text-entered" class="text-entered"></div>
+      <input
+        class="rangeBar"
+        value="40"
+        type="range"
+        name="text"
+        id="range"
+        min="20"
+        max="100"
+        onchange="changeSize()"
+      />
+
+      <!-- <textarea  name="text" class="text-area" id="text" cols="150" rows="10"></textarea> -->
+      <span class="text-white">First Name: </span
+      ><input
+        placeholder="Enter your first-name"
+        id="first-name"
+        class="field"
+        type="text"
+      />
+      <span class="text-white">Last Name: </span
+      ><input
+        placeholder="Enter your last-name"
+        id="last-name"
+        class="field"
+        type="text"
+      />
+      <span class="text-white">Occupation: </span
+      ><input
+        placeholder="Enter your occuation"
+        id="occupation"
+        class="field"
+        type="text"
+      />
+      <span class="text-white">Choose Color: </span
+      ><input
+        onchange="changeColor()"
+        id="color-picker"
+        class="color-picker"
+        type="color"
+      />
+      <button class="text-btn" onclick="changeReload()">Go!</button>
+      <div id="text-entered" class="text-entered"></div>
     </div>
     <script src="./task3_2.js"></script>
-</body>
+  </body>
 </html>
